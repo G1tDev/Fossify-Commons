@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <color name="you_status_bar_color">#C2A123</color>
     <color name="you_contextual_status_bar_color">#D4AF37</color>
     <color name="you_background_color">#FFF8E1</color>
@@ -13,4 +14,5 @@
     <color name="you_surface_color">#FFECB3</color>
     <color name="you_selected_item_background_color">#FFE082</color>
     <color name="you_ripple_color">#FFD54F</color>
+
 </resources>
