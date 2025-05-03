@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="you_status_bar_color">#C2A123</color>
-    <color name="you_contextual_status_bar_color">#D4AF37</color>
-    <color name="you_background_color">#FFF8E1</color>
-    <color name="you_bottom_bar_color">#FFECB3</color>
+    <color name="you_status_bar_color">#FFA000</color>
+    <color name="you_contextual_status_bar_color">#FFB300</color>
+    <color name="you_background_color">#FFFDE7</color>
+    <color name="you_bottom_bar_color">#FFE082</color>
 
-    <color name="you_neutral_text_color">#6B4E16</color>
-    <color name="you_primary_color">#FFDB58</color>
-    <color name="you_primary_dark_color">#C2A123</color>
+    <color name="you_neutral_text_color">#8F6101</color>
+    <color name="you_primary_color">#FFC107</color>
+    <color name="you_primary_dark_color">#FFA000</color>
 
-    <color name="you_dialog_background_color">#FFF3CD</color>
+    <color name="you_dialog_background_color">#FFF8E1</color>
     <color name="you_surface_color">#FFECB3</color>
-    <color name="you_selected_item_background_color">#FFE082</color>
-    <color name="you_ripple_color">#FFD54F</color>
+    <color name="you_selected_item_background_color">#FFD54F</color>
+    <color name="you_ripple_color">#FFCA28</color>
 
 </resources>
