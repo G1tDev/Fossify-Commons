@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#FFC107</color>
-    <color name="color_primary_dark">#FFA000</color>
-    <color name="color_accent">#FFEB3B</color>
+    <color name="color_primary">#2196F3</color>
+    <color name="color_primary_dark">#14a7fc</color>
+    <color name="color_accent">#03A9F4</color>
 
 
-    <color name="pressed_item_foreground">#26FFC107</color>
-    <color name="activated_item_foreground">#44FFC107</color>
-    <color name="divider_grey">#80FFA000</color>
-    <color name="gradient_grey_start">#CCF9A825</color>
-    <color name="dark_grey">#FF8F6101</color>
+    <color name="pressed_item_foreground">#262196F3</color>
+    <color name="activated_item_foreground">#442196F3</color>
+    <color name="divider_grey">#8014a7fc</color>
+    <color name="gradient_grey_start">#CC1976D2</color>
+    <color name="dark_grey">#FF01579B</color>
 
-    <color name="bottom_tabs_light_background">#FFF8E1</color>
+    <color name="bottom_tabs_light_background">#E3F2FD</color>
     <color name="disabled_text_color_highlight">#00FFFFFF</color>
 
 
-    <color name="hint_white">#99FFF8E1</color>
-    <color name="hint_black">#668F6101</color>
+    <color name="hint_white">#99E3F2FD</color>
+    <color name="hint_black">#6601579B</color>
 
 
-    <color name="light_grey_stroke">#40FFF8E1</color>
+    <color name="light_grey_stroke">#40E3F2FD</color>
 
 
-    <color name="theme_light_text_color">#8F6101</color>
-    <color name="theme_light_background_color">#FFFDE7</color>
-    <color name="theme_dark_text_color">#FFEB3B</color>
-    <color name="theme_dark_background_color">#33280B</color>
+    <color name="theme_light_text_color">#01579B</color>
+    <color name="theme_light_background_color">#E1F5FE</color>
+    <color name="theme_dark_text_color">#03A9F4</color>
+    <color name="theme_dark_background_color">#0B2833</color>
 
-    <color name="theme_solarized_background_color">#8F6101</color>
-    <color name="theme_solarized_text_color">#FFEB3B</color>
-    <color name="theme_solarized_primary_color">#FFC107</color>
+    <color name="theme_solarized_background_color">#01579B</color>
+    <color name="theme_solarized_text_color">#03A9F4</color>
+    <color name="theme_solarized_primary_color">#2196F3</color>
     <color name="theme_dark_red_primary_color">#8B0000</color>
 
 
@@ -38,15 +38,15 @@
     <color name="default_primary_color">@color/color_primary</color>
     <color name="default_app_icon_color">@color/color_primary</color>
     <color name="default_accent_color">@color/color_primary</color>
-    <color name="default_widget_bg_color">#AA8F6101</color>
+    <color name="default_widget_bg_color">#AA01579B</color>
     <color name="default_widget_text_color">@color/color_primary</color>
 
 
-    <color name="thumb_deactivated">#FFFFE082</color>
-    <color name="track_deactivated">#FFFFD54F</color>
+    <color name="thumb_deactivated">#FF90CAF9</color>
+    <color name="track_deactivated">#FF64B5F6</color>
 
 
-    <color name="radiobutton_disabled">#FFB8860B</color>
+    <color name="radiobutton_disabled">#FF0D47A1</color>
 
 
     <color name="md_amber">#FFC107</color>
