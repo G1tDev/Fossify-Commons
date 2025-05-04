@@ -1,54 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#2196F3</color>
-    <color name="color_primary_dark">#14a7fc</color>
-    <color name="color_accent">#03A9F4</color>
+    <color name="color_primary">@color/md_indigo_900</color>
+    <color name="color_primary_dark">@color/md_indigo_900_dark</color>
+    <color name="color_accent">@color/md_light_blue_500</color>
 
-
-    <color name="pressed_item_foreground">#262196F3</color>
-    <color name="activated_item_foreground">#442196F3</color>
-    <color name="divider_grey">#8014a7fc</color>
-    <color name="gradient_grey_start">#CC1976D2</color>
-    <color name="dark_grey">#FF01579B</color>
-
-    <color name="bottom_tabs_light_background">#E3F2FD</color>
+    <color name="pressed_item_foreground">#08000000</color>
+    <color name="activated_item_foreground">#44888888</color>
+    <color name="divider_grey">#55808080</color>
+    <color name="gradient_grey_start">#CC000000</color>
+    <color name="dark_grey">#FF333333</color>
+    <color name="bottom_tabs_light_background">#FFF1F1F1</color>
     <color name="disabled_text_color_highlight">#00FFFFFF</color>
 
+    <color name="hint_white">#99FFFFFF</color>
+    <color name="hint_black">#66000000</color>
+    <color name="light_grey_stroke">#40FFFFFF</color>
 
-    <color name="hint_white">#99E3F2FD</color>
-    <color name="hint_black">#6601579B</color>
+    <!-- Color Customization -->
+    <color name="theme_light_text_color">@color/md_grey_800_dark</color>
+    <color name="theme_light_background_color">@color/md_grey_white</color>
+    <color name="theme_dark_text_color">@color/md_grey_200</color>
+    <color name="theme_dark_background_color">#162236</color>
+    <color name="theme_solarized_background_color">@color/md_indigo_900_dark</color>
+    <color name="theme_solarized_text_color">@color/md_light_blue_300</color>
+    <color name="theme_solarized_primary_color">@color/md_indigo_900</color>
+    <color name="theme_dark_red_primary_color">@color/md_red_700</color>
 
-
-    <color name="light_grey_stroke">#40E3F2FD</color>
-
-
-    <color name="theme_light_text_color">#01579B</color>
-    <color name="theme_light_background_color">#E1F5FE</color>
-    <color name="theme_dark_text_color">#03A9F4</color>
-    <color name="theme_dark_background_color">#0B2833</color>
-
-    <color name="theme_solarized_background_color">#01579B</color>
-    <color name="theme_solarized_text_color">#03A9F4</color>
-    <color name="theme_solarized_primary_color">#2196F3</color>
-    <color name="theme_dark_red_primary_color">#8B0000</color>
-
-
+    <!-- Default values -->
     <color name="default_text_color">@color/theme_dark_text_color</color>
     <color name="default_background_color">@color/theme_dark_background_color</color>
     <color name="default_primary_color">@color/color_primary</color>
     <color name="default_app_icon_color">@color/color_primary</color>
-    <color name="default_accent_color">@color/color_primary</color>
-    <color name="default_widget_bg_color">#AA01579B</color>
-    <color name="default_widget_text_color">@color/color_primary</color>
+    <color name="default_accent_color">@color/md_light_blue_500</color>
+    <color name="default_widget_bg_color">#AA162236</color>
+    <color name="default_widget_text_color">@color/md_light_blue_300</color>
 
+    <!-- SwitchCompat -->
+    <color name="thumb_deactivated">#FFECECEC</color>
+    <color name="track_deactivated">#FFB2B2B2</color>
 
-    <color name="thumb_deactivated">#FF90CAF9</color>
-    <color name="track_deactivated">#FF64B5F6</color>
+    <!-- Radiobutton -->
+    <color name="radiobutton_disabled">#FF757575</color>
 
-
-    <color name="radiobutton_disabled">#FF0D47A1</color>
-
-
+    <!-- Primary colors -->
     <color name="md_amber">#FFC107</color>
     <color name="md_blue">#2196F3</color>
     <color name="md_blue_grey">#607D8B</color>

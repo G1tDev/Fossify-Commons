@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Status bar colors -->
+    <color name="you_status_bar_color">#1A237E</color>          <!-- Dark blue (indigo 900) -->
+    <color name="you_contextual_status_bar_color">#3F51B5</color>  <!-- Medium blue (indigo 500) -->
 
-    <color name="you_status_bar_color">#14a7fc</color>
-    <color name="you_contextual_status_bar_color">#1E88E5</color>
-    <color name="you_background_color">#E3F2FD</color>
-    <color name="you_bottom_bar_color">#90CAF9</color>
+    <!-- Background colors -->
+    <color name="you_background_color">#0A1626</color>          <!-- Darkest navy blue for main bg -->
+    <color name="you_bottom_bar_color">#162236</color>          <!-- Dark navy blue for bottom bar -->
+    <color name="you_surface_color">#162236</color>             <!-- Dark navy for surfaces -->
 
-    <color name="you_neutral_text_color">#01579B</color>
-    <color name="you_primary_color">#2196F3</color>
-    <color name="you_primary_dark_color">#14a7fc</color>
+    <!-- Text and content colors -->
+    <color name="you_neutral_text_color">#FFFFFF</color>        <!-- White for text on dark backgrounds -->
 
-    <color name="you_dialog_background_color">#E1F5FE</color>
-    <color name="you_surface_color">#BBDEFB</color>
-    <color name="you_selected_item_background_color">#64B5F6</color>
-    <color name="you_ripple_color">#42A5F5</color>
+    <!-- Primary theme colors -->
+    <color name="you_primary_color">#03A9F4</color>             <!-- Light blue 500 as accent -->
+    <color name="you_primary_dark_color">#0288D1</color>        <!-- Light blue 700 as darker variant -->
 
+    <!-- UI element colors -->
+    <color name="you_dialog_background_color">#1F2E45</color>   <!-- Slightly lighter blue for dialogs -->
+    <color name="you_selected_item_background_color">#2C3E50</color>  <!-- Highlighted item bg color -->
+    <color name="you_ripple_color">#4D6585</color>              <!-- Touch feedback color -->
 </resources>
