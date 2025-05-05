@@ -104,9 +104,9 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
 
         super.onCreate(savedInstanceState)
-        if (!packageName.startsWith("org.fossify.", true)) {
+        if (!packageName.startsWith("com.smart.", true)) {
             if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
-                val label = "You are using a fake version of the app. For your own safety download the original one from www.fossify.org. Thanks"
+                val label = "Thank you for using our apps."
                 ConfirmationDialog(
                     activity = this,
                     message = label,
@@ -648,9 +648,9 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
     }
 
     fun startCustomizationActivity() {
-        if (!packageName.contains("yfissof".reversed(), true)) {
+        if (!packageName.contains("com.smart.", true)) {
             if (baseConfig.appRunCount > 100) {
-                val label = "You are using a fake version of the app. For your own safety download the original one from www.fossify.org. Thanks"
+                val label = "Thank you for using our apps."
                 ConfirmationDialog(
                     activity = this,
                     message = label,
