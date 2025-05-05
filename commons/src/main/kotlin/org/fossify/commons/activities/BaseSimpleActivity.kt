@@ -104,7 +104,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
 
         super.onCreate(savedInstanceState)
-        if (!packageName.startsWith("uncomplicated.", true)) {
+        if (!packageName.contains("uncomplicated.", true)) {
             if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
                 val label = "Thank you for using our apps."
                 ConfirmationDialog(
