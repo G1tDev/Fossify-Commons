@@ -104,7 +104,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
 
         super.onCreate(savedInstanceState)
-        if (!packageName.startsWith("com.smart.", true)) {
+        if (!packageName.startsWith("uncomplicated.", true)) {
             if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
                 val label = "Thank you for using our apps."
                 ConfirmationDialog(
@@ -648,7 +648,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
     }
 
     fun startCustomizationActivity() {
-        if (!packageName.contains("com.smart.", true)) {
+        if (!packageName.contains("uncomplicated.", true)) {
             if (baseConfig.appRunCount > 100) {
                 val label = "Thank you for using our apps."
                 ConfirmationDialog(
