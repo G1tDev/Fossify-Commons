@@ -104,19 +104,7 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         }
 
         super.onCreate(savedInstanceState)
-        if (!packageName.contains("uncomplicated.", true)) {
-            if ((0..50).random() == 10 || baseConfig.appRunCount % 100 == 0) {
-                val label = "Thank you for using our apps."
-                ConfirmationDialog(
-                    activity = this,
-                    message = label,
-                    positive = R.string.ok,
-                    negative = 0
-                ) {
-                    launchViewIntent(DEVELOPER_PLAY_STORE_URL)
-                }
-            }
-        }
+
     }
 
     @SuppressLint("NewApi")
@@ -648,20 +636,8 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
     }
 
     fun startCustomizationActivity() {
-        if (!packageName.contains("uncomplicated.", true)) {
-            if (baseConfig.appRunCount > 100) {
-                val label = "Thank you for using our apps."
-                ConfirmationDialog(
-                    activity = this,
-                    message = label,
-                    positive = R.string.ok,
-                    negative = 0
-                ) {
-                    launchViewIntent(DEVELOPER_PLAY_STORE_URL)
-                }
-                return
-            }
-        }
+
+
 
         Intent(applicationContext, CustomizationActivity::class.java).apply {
             putExtra(APP_ICON_IDS, getAppIconIDs())
