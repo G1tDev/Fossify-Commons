@@ -504,22 +504,39 @@ fun Context.isOrWasThankYouInstalled(): Boolean {
             baseConfig.hadThankYouInstalled = true
             true
         }
-
         else -> false
     }
 }
 
 fun Context.isAProApp() = packageName.startsWith("org.fossify.") && packageName.removeSuffix(".debug").endsWith(".pro")
 
-fun Context.getCustomizeColorsString(): String {
-    val textId = if (isOrWasThankYouInstalled()) {
-        R.string.customize_colors
-    } else {
-        R.string.customize_colors_locked
-    }
 
-    return getString(textId)
+fun Context.getCustomizeColorsString(): String {
+    return getString(R.string.customize_colors)  // Always return unlocked text
 }
+
+fun Context.isCustomizationUnlocked(): Boolean {
+    return when {
+        resources.getBoolean(R.bool.pretend_thank_you_installed) -> true
+        isUnlockedApp() -> true
+        baseConfig.hadThankYouInstalled -> true
+        isThankYouInstalled() -> {
+            baseConfig.hadThankYouInstalled = true
+            true
+        }
+        else -> false
+    }
+}
+
+fun Context.isUnlockedApp(): Boolean {
+    val unlockedApps = setOf(
+        "com.uncomplicated.productivity.clock",
+        "com.uncomplicated.tools.calculator"
+        // Add more app package names here as needed
+    )
+    return packageName in unlockedApps
+}
+
 
 fun Context.addLockedLabelIfNeeded(stringId: Int): String {
     return if (isOrWasThankYouInstalled()) {
