@@ -57,4 +57,5 @@ fun AppThemeSurface(
 
 @Composable
 private fun OnContentDisplayed() {
-    print("Welcome")}
+    print("Welcome")
+}

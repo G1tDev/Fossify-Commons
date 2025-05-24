@@ -102,7 +102,6 @@ abstract class BaseSimpleActivity : AppCompatActivity() {
         if (useDynamicTheme) {
             setTheme(getThemeId(showTransparentTop = showTransparentTop))
         }
-
         super.onCreate(savedInstanceState)
 
     }
