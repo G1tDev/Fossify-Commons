@@ -95,6 +95,9 @@ fun Activity.appLaunched(appId: String) {
 }
 
 fun Activity.showDonateOrUpgradeDialog() {
+    if (baseConfig.disableDonationDialogs) {
+        return
+    }
     if (getCanAppBeUpgraded()) {
         UpgradeToProDialog(this)
     } else if (!isOrWasThankYouInstalled()) {
@@ -1718,4 +1721,21 @@ fun Activity.overrideActivityTransition(enterAnim: Int, exitAnim: Int, exiting: 
         @Suppress("DEPRECATION")
         overridePendingTransition(enterAnim, exitAnim)
     }
+}
+
+fun Activity.disableDonationDialogs() {
+    baseConfig.disableDonationDialogs = true
+}
+
+fun Activity.enableDonationDialogs() {
+    baseConfig.disableDonationDialogs = false
+}
+
+fun Activity.areDonationDialogsDisabled(): Boolean {
+    return baseConfig.disableDonationDialogs
+}
+
+// Convenience function to check if donation dialogs are enabled
+fun Activity.areDonationDialogsEnabled(): Boolean {
+    return !baseConfig.disableDonationDialogs
 }

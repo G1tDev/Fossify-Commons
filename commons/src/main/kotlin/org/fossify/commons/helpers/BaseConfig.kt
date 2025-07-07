@@ -620,6 +620,10 @@ open class BaseConfig(val context: Context) {
 
     var showCheckmarksOnSwitchesFlow = ::showCheckmarksOnSwitches.asFlowNonNull()
 
+    var disableDonationDialogs: Boolean
+        get() = prefs.getBoolean(DISABLE_DONATION_DIALOGS, true)
+        set(disableDonationDialogs) = prefs.edit().putBoolean(DISABLE_DONATION_DIALOGS, disableDonationDialogs).apply()
+
     protected fun <T> KProperty0<T>.asFlow(emitOnCollect: Boolean = false): Flow<T?> =
         prefs.run { sharedPreferencesCallback(sendOnCollect = emitOnCollect) { this@asFlow.get() } }
 

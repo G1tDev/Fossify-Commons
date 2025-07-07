@@ -55,7 +55,7 @@ fun ComponentActivity.appLaunchedCompose(
 
     baseConfig.appRunCount++
     if (baseConfig.appRunCount % 30 == 0 && !isAProApp()) {
-        if (!resources.getBoolean(R.bool.hide_google_relations)) {
+        if (!resources.getBoolean(R.bool.hide_google_relations) && !baseConfig.disableDonationDialogs) {
             if (getCanAppBeUpgraded()) {
                 showUpgradeDialog()
             } else if (!isOrWasThankYouInstalled()) {

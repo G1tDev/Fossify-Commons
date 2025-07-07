@@ -35,6 +35,10 @@ class MainActivity : BaseSimpleActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdgeSimple()
+        
+        // Example: Enable donation dialogs (they're disabled by default)
+        // enableDonationDialogs()
+        
         appLaunched(BuildConfig.APPLICATION_ID)
         loadInterstitialAdThenLaunchUI()
 

@@ -589,7 +589,9 @@ class CustomizationActivity : BaseSimpleActivity() {
 
             else -> {
                 binding.applyToAll.isChecked = false
-                PurchaseThankYouDialog(this)
+                if (!baseConfig.disableDonationDialogs) {
+                    PurchaseThankYouDialog(this)
+                }
             }
         }
     }
