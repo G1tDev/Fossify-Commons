@@ -22,4 +22,9 @@ object MyContentProvider {
     const val GLOBAL_THEME_DISABLED = 0
     const val GLOBAL_THEME_SYSTEM = 1
     const val GLOBAL_THEME_CUSTOM = 2
+
+    // Theme mode constants
+    const val THEME_MODE_LIGHT = 0
+    const val THEME_MODE_DARK = 1
+    const val THEME_MODE_SYSTEM = 2
 }

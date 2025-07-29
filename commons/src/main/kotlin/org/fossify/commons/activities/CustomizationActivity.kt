@@ -17,6 +17,9 @@ import org.fossify.commons.helpers.MyContentProvider.COL_THEME_TYPE
 import org.fossify.commons.helpers.MyContentProvider.GLOBAL_THEME_CUSTOM
 import org.fossify.commons.helpers.MyContentProvider.GLOBAL_THEME_DISABLED
 import org.fossify.commons.helpers.MyContentProvider.GLOBAL_THEME_SYSTEM
+import org.fossify.commons.helpers.MyContentProvider.THEME_MODE_LIGHT
+import org.fossify.commons.helpers.MyContentProvider.THEME_MODE_DARK
+import org.fossify.commons.helpers.MyContentProvider.THEME_MODE_SYSTEM
 import org.fossify.commons.models.GlobalConfig
 import org.fossify.commons.models.MyTheme
 import org.fossify.commons.models.RadioItem
@@ -234,6 +237,14 @@ class CustomizationActivity : BaseSimpleActivity() {
         curSelectedThemeId = themeId
         binding.customizationTheme.text = getThemeText()
 
+        // Update theme mode based on selected theme
+        baseConfig.themeMode = when (themeId) {
+            THEME_SYSTEM -> THEME_MODE_SYSTEM
+            THEME_LIGHT -> THEME_MODE_LIGHT
+            THEME_DARK -> THEME_MODE_DARK
+            else -> THEME_MODE_LIGHT // Default to light for custom themes
+        }
+
         if (curSelectedThemeId == THEME_CUSTOM) {
             if (useStored) {
                 curTextColor = baseConfig.customTextColor
@@ -307,7 +318,8 @@ class CustomizationActivity : BaseSimpleActivity() {
     }
 
     private fun getCurrentThemeId(): Int {
-        if ((baseConfig.isSystemThemeEnabled && !hasUnsavedChanges) || curSelectedThemeId == THEME_SYSTEM) {
+        // Check if we should use system theme based on theme mode
+        if ((baseConfig.themeMode == MyContentProvider.THEME_MODE_SYSTEM && !hasUnsavedChanges) || curSelectedThemeId == THEME_SYSTEM) {
             return THEME_SYSTEM
         }
 
@@ -372,6 +384,14 @@ class CustomizationActivity : BaseSimpleActivity() {
         }
 
         baseConfig.isGlobalThemeEnabled = binding.applyToAll.isChecked
+        // Update theme mode based on selected theme
+        baseConfig.themeMode = when (curSelectedThemeId) {
+            THEME_SYSTEM -> MyContentProvider.THEME_MODE_SYSTEM
+            THEME_LIGHT -> MyContentProvider.THEME_MODE_LIGHT
+            THEME_DARK -> MyContentProvider.THEME_MODE_DARK
+            else -> MyContentProvider.THEME_MODE_LIGHT // Default to light for custom themes
+        }
+        // Keep isSystemThemeEnabled for backward compatibility
         baseConfig.isSystemThemeEnabled = curSelectedThemeId == THEME_SYSTEM
 
         if (isThankYouInstalled()) {

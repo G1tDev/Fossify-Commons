@@ -17,6 +17,7 @@ import java.util.Calendar
 import java.util.LinkedList
 import java.util.Locale
 import kotlin.reflect.KProperty0
+import org.fossify.commons.helpers.MyContentProvider
 
 open class BaseConfig(val context: Context) {
     protected val prefs = context.getSharedPrefs()
@@ -242,6 +243,19 @@ open class BaseConfig(val context: Context) {
     var isSystemThemeEnabled: Boolean
         get() = prefs.getBoolean(IS_SYSTEM_THEME_ENABLED, isSPlus())
         set(isSystemThemeEnabled) = prefs.edit().putBoolean(IS_SYSTEM_THEME_ENABLED, isSystemThemeEnabled).apply()
+
+    var themeMode: Int
+        get() {
+            // Migration: if theme mode is not set but isSystemThemeEnabled is set, migrate to new system
+            if (!prefs.contains(THEME_MODE) && prefs.contains(IS_SYSTEM_THEME_ENABLED)) {
+                val isSystemEnabled = prefs.getBoolean(IS_SYSTEM_THEME_ENABLED, isSPlus())
+                val newThemeMode = if (isSystemEnabled) MyContentProvider.THEME_MODE_SYSTEM else MyContentProvider.THEME_MODE_LIGHT
+                prefs.edit().putInt(THEME_MODE, newThemeMode).apply()
+                return newThemeMode
+            }
+            return prefs.getInt(THEME_MODE, MyContentProvider.THEME_MODE_LIGHT)
+        }
+        set(themeMode) = prefs.edit().putInt(THEME_MODE, themeMode).apply()
 
     var wasCustomThemeSwitchDescriptionShown: Boolean
         get() = prefs.getBoolean(WAS_CUSTOM_THEME_SWITCH_DESCRIPTION_SHOWN, false)

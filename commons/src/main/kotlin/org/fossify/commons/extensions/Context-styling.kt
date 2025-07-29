@@ -12,11 +12,16 @@ import com.google.android.material.color.MaterialColors
 import org.fossify.commons.R
 import org.fossify.commons.helpers.*
 import org.fossify.commons.helpers.MyContentProvider.GLOBAL_THEME_SYSTEM
+import org.fossify.commons.helpers.MyContentProvider.GLOBAL_THEME_CUSTOM
 import org.fossify.commons.models.GlobalConfig
 import org.fossify.commons.models.isGlobalThemingEnabled
 import org.fossify.commons.views.*
 
-fun Context.isDynamicTheme() = isSPlus() && baseConfig.isSystemThemeEnabled
+fun Context.isDynamicTheme() = isSPlus() && baseConfig.themeMode == MyContentProvider.THEME_MODE_SYSTEM
+
+fun Context.isLightTheme() = baseConfig.themeMode == MyContentProvider.THEME_MODE_LIGHT
+
+fun Context.isDarkTheme() = baseConfig.themeMode == MyContentProvider.THEME_MODE_DARK
 
 fun Context.isBlackAndWhiteTheme() = baseConfig.textColor == Color.WHITE && baseConfig.primaryColor == Color.BLACK && baseConfig.backgroundColor == Color.BLACK
 
@@ -24,7 +29,7 @@ fun Context.isWhiteTheme() = baseConfig.textColor == DARK_GREY && baseConfig.pri
 
 fun Context.isSystemInDarkMode() = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_YES != 0
 
-fun Context.isAutoTheme() = !isSPlus() && baseConfig.isSystemThemeEnabled
+fun Context.isAutoTheme() = !isSPlus() && baseConfig.themeMode == MyContentProvider.THEME_MODE_SYSTEM
 
 fun Context.getProperTextColor() = when {
     isDynamicTheme() -> resources.getColor(R.color.you_neutral_text_color, theme)
@@ -121,6 +126,13 @@ fun Context.syncGlobalConfig(callback: (() -> Unit)? = null) {
                     showCheckmarksOnSwitches = it.showCheckmarksOnSwitches
                     if (it.isGlobalThemingEnabled()) {
                         isGlobalThemeEnabled = true
+                        // Map global theme type to new theme mode
+                        themeMode = when (it.themeType) {
+                            GLOBAL_THEME_SYSTEM -> MyContentProvider.THEME_MODE_SYSTEM
+                            GLOBAL_THEME_CUSTOM -> MyContentProvider.THEME_MODE_LIGHT // Default to light for custom
+                            else -> MyContentProvider.THEME_MODE_LIGHT // Default to light
+                        }
+                        // Keep isSystemThemeEnabled for backward compatibility
                         isSystemThemeEnabled = it.themeType == GLOBAL_THEME_SYSTEM
                         textColor = it.textColor
                         backgroundColor = it.backgroundColor
