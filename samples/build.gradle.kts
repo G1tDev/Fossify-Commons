@@ -5,7 +5,7 @@ import java.io.FileInputStream
 plugins {
     alias(libs.plugins.android)
     alias(libs.plugins.kotlinAndroid)
-    alias(libs.plugins.detekt)
+    // alias(libs.plugins.detekt) // Temporarily disabled due to JVM target issue
 }
 
 val keystorePropertiesFile: File = rootProject.file("keystore.properties")
@@ -107,9 +107,9 @@ android {
     }
 }
 
-detekt {
-    baseline = file("detekt-baseline.xml")
-}
+// detekt {
+//     baseline = file("detekt-baseline.xml")
+// }
 
 dependencies {
     implementation(projects.commons)
