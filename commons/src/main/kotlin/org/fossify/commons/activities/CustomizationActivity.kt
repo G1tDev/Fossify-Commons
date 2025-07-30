@@ -323,6 +323,11 @@ class CustomizationActivity : BaseSimpleActivity() {
             return THEME_SYSTEM
         }
 
+        // If theme mode is light and no specific theme is detected, default to light theme
+        if (baseConfig.themeMode == MyContentProvider.THEME_MODE_LIGHT && curSelectedThemeId == 0) {
+            return THEME_LIGHT
+        }
+
         var themeId = THEME_CUSTOM
         resources.apply {
             for ((key, value) in predefinedThemes.filter { it.key != THEME_CUSTOM && it.key != THEME_SYSTEM }) {

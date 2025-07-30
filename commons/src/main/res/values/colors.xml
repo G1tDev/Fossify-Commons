@@ -27,8 +27,8 @@
     <color name="theme_dark_red_primary_color">@color/md_red_700</color>
 
     <!-- Default values -->
-    <color name="default_text_color">@color/theme_light_text_color</color>
-    <color name="default_background_color">@color/theme_light_background_color</color>
+    <color name="default_text_color">@color/theme_dark_text_color</color>
+    <color name="default_background_color">@color/theme_dark_background_color</color>
     <color name="default_primary_color">@color/color_primary</color>
     <color name="default_app_icon_color">@color/color_primary</color>
     <color name="default_accent_color">@color/color_primary</color>
