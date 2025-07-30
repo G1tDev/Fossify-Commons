@@ -241,7 +241,7 @@ open class BaseConfig(val context: Context) {
         set(isGlobalThemeEnabled) = prefs.edit().putBoolean(IS_GLOBAL_THEME_ENABLED, isGlobalThemeEnabled).apply()
 
     var isSystemThemeEnabled: Boolean
-        get() = prefs.getBoolean(IS_SYSTEM_THEME_ENABLED, isSPlus())
+        get() = prefs.getBoolean(IS_SYSTEM_THEME_ENABLED, false) // Changed default to false to prefer light theme
         set(isSystemThemeEnabled) = prefs.edit().putBoolean(IS_SYSTEM_THEME_ENABLED, isSystemThemeEnabled).apply()
 
     var themeMode: Int
