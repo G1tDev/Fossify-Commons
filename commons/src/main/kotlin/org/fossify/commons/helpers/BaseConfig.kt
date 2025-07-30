@@ -248,7 +248,7 @@ open class BaseConfig(val context: Context) {
         get() {
             // Migration: if theme mode is not set but isSystemThemeEnabled is set, migrate to new system
             if (!prefs.contains(THEME_MODE) && prefs.contains(IS_SYSTEM_THEME_ENABLED)) {
-                val isSystemEnabled = prefs.getBoolean(IS_SYSTEM_THEME_ENABLED, isSPlus())
+                val isSystemEnabled = prefs.getBoolean(IS_SYSTEM_THEME_ENABLED, false) // Use false as default
                 val newThemeMode = if (isSystemEnabled) MyContentProvider.THEME_MODE_SYSTEM else MyContentProvider.THEME_MODE_LIGHT
                 prefs.edit().putInt(THEME_MODE, newThemeMode).apply()
                 return newThemeMode
